@@ -273,10 +273,10 @@ for (let i = 0; i < 10; i++) {
   square++;
 
   if (square < 20) {
-    console.log(small);
+    console.log("small");
   } else if (square > 20 && square < 50) {
-    console.log(medium);
+    console.log("medium");
   } else {
-    console.log(big);
+    console.log("big");
   }
 }
