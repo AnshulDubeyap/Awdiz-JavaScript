@@ -230,16 +230,17 @@ let arr10 = [1, 2, 2, 3, 4, 1];
 let uniqueArr = [];
 
 for (let i = 0; i < arr10.length; i++) {
-  for (let j = i + 1; j < arr10.length; j++) {
-    if (arr10[i] == arr10[j]) {
-      break;
-    } else {
-      uniqueArr.push(arr10[i]);
-      break;
+  let flag = false;
+  for (let j = 0; j < uniqueArr.length; j++) {
+    if (arr10[i] == uniqueArr[j]) {
+      flag = true;
     }
   }
-}
 
+  if (!flag) {
+    uniqueArr.push(arr10[i]);
+  }
+}
 console.log("uniqueArr : " + uniqueArr);
 
 //! Slice first 3 elements of array
