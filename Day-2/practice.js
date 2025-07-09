@@ -249,12 +249,15 @@ for (let i = 0; i < 50; i++) {
       break;
   }
 }
-
+ 
 //!--9 fibonacci
 
 let num6 = 0;
 let num7 = 1;
 let sum2 = 0;
+
+console.log(sum2);
+console.log(sum2);
 
 for (let i = 0; i < 10; i++) {
   sum2 = num6 + num7;
@@ -266,11 +269,10 @@ for (let i = 0; i < 10; i++) {
 
 //!--10
 
-let square = 1;
+let square = 0;
 
 for (let i = 0; i < 10; i++) {
-  square = square * i;
-  square++;
+  square = i * i;
 
   if (square < 20) {
     console.log("small");
