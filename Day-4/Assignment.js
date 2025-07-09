@@ -224,71 +224,76 @@ switch (true) {
 }
 console.log("Grade is: " + grade);
 
-//! 16. Test re-declaring a variable
-
-let x = 10;
-// var x = 20; // Uncommenting this line will cause SyntaxError
-console.log(x); // Output: 10
-
-//! 17. Remove duplicates from array without Set
+//! Remove duplicates from array without Set
 
 let arr10 = [1, 2, 2, 3, 4, 1];
 let uniqueArr = [];
 
 for (let i = 0; i < arr10.length; i++) {
-  let found = false;
-  for (let j = 0; j < uniqueArr.length; j++) {
-    if (arr10[i] === uniqueArr[j]) {
-      found = true;
+  for (let j = i + 1; j < arr10.length; j++) {
+    if (arr10[i] == arr10[j]) {
+      break;
+    } else {
+      uniqueArr.push(arr10[i]);
       break;
     }
   }
-  if (!found) {
-    uniqueArr.push(arr10[i]);
-  }
 }
-console.log(uniqueArr);
 
-//! 18. Slice first 3 elements of array
+console.log("uniqueArr : " + uniqueArr);
+
+//! Slice first 3 elements of array
 
 let arr11 = [10, 20, 30, 40, 50];
-let sliced = [];
 
-for (let i = 0; i < 3; i++) {
-  sliced.push(arr11[i]);
-}
-console.log(sliced);
+let sliced = arr11.slice(0, 3);
 
-//! 19. Find intersection of two arrays
+console.log("sliced : " + sliced);
 
-let arr12 = [1, 2, 3];
+//! Find intersection of two arrays
+
+let arr12 = [1, 2, 3, 2];
 let arr13 = [2, 3, 4];
 let intersection = [];
+let intersectionUnique = [];
+
+// Intersection
 
 for (let i = 0; i < arr12.length; i++) {
   for (let j = 0; j < arr13.length; j++) {
-    if (arr12[i] === arr13[j]) {
+    if (arr12[i] == arr13[j]) {
       intersection.push(arr12[i]);
+    }
+  }
+}
+
+// duplicates
+
+for (let i = 0; i < intersection.length; i++) {
+  for (let j = i + 1; j < intersection.length; j++) {
+    if (intersection[i] == intersection[j]) {
+      break;
+    } else {
+      intersectionUnique.push(intersection[i]);
       break;
     }
   }
 }
-console.log(intersection);
 
-//! 20. Reverse array using while loop (in-place)
+console.log("Intersection : " + intersectionUnique);
+
+//! Reverse array using while loop (into new array)
 
 let arr14 = [1, 2, 3, 4];
-let start = 0;
-let end = arr14.length - 1;
+let rev3 = [];
+let count2 = arr14.length - 1;
 
-while (start < end) {
-  let temp = arr14[start];
-  arr14[start] = arr14[end];
-  arr14[end] = temp;
-  start++;
-  end--;
+while (count2 >= 0) {
+  rev3.push(arr14[count2]);
+  count2--;
 }
-console.log(arr14);
+
+console.log("The reverse : " + rev3);
 
 //! 21. Check if all elements are positive using flag
 
