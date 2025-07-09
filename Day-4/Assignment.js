@@ -295,7 +295,7 @@ while (count2 >= 0) {
 
 console.log("The reverse : " + rev3);
 
-//! 21. Check if all elements are positive using flag
+//! Check if all elements are positive using flag
 
 let arr15 = [1, 4, 6, 9];
 let allPositive = true;
@@ -325,7 +325,7 @@ for (let i = 0; i < str2.length; i++) {
 
 console.log(hasUpper && hasLower);
 
-//! 23. Determine if a number is prime using flag
+//! Determine if a number is prime using flag
 
 let num = 13;
 let isPrime2 = true;
@@ -338,20 +338,27 @@ for (let i = 2; i * i <= num; i++) {
 }
 console.log(isPrime2);
 
-//! 24. Check if array is sorted in ascending order
+//! Check if array is sorted in ascending order
 
-let arr16 = [2, 5, 8, 9];
+let arr16 = [2, 5, 8, 6, 9];
 let isSorted = true;
 
-for (let i = 0; i < arr16.length - 1; i++) {
-  if (arr16[i] > arr16[i + 1]) {
+for (let i = 0; i < arr16.length; i++) {
+  if (arr16[i] < arr16[i + 1]) {
+    isSorted = true;
+  } else {
     isSorted = false;
     break;
   }
 }
-console.log(isSorted);
 
-//! 25. Check if a word has repeating characters
+if (isSorted) {
+  console.log("Yes the array is sorted");
+} else {
+  console.log("No the array is not sorted");
+}
+
+//! Check if a word has repeating characters
 
 let word = "coding";
 let charMap = {};
