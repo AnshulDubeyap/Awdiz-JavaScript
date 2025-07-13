@@ -10,3 +10,5 @@ for (let i = 0; i < arr2.length; i++) {
   rev = "";
 }
 console.log(revArr);
+var a = 10;
+var a = 20;
