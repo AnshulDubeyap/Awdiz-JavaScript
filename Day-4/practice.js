@@ -1,14 +1,21 @@
-arr2 = ["Hello", "World"];
-let revArr = [];
-let rev = "";
+let arr = [
+  [1, 2, 3],
+  [12, 12, 1212],
+];
 
-for (let i = 0; i < arr2.length; i++) {
-  for (let j = arr2[i].length - 1; j >= 0; j--) {
-    rev += arr2[i][j];
-  }
-  revArr.push(rev);
-  rev = "";
+let arr2 = arr.flat();
+console.log(arr2);
+
+let arr18 = ["hi", "yes", "no", "maybe"];
+
+let obj = {
+  1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  5: 0,
+};
+
+for (let i = 0; i < arr18.length; i++) {
+  if()
 }
-console.log(revArr);
-var a = 10;
-var a = 20;
