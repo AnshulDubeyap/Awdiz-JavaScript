@@ -30,3 +30,22 @@ for (let i = 1; i <= rows; i++) {
   }
   console.log(line);
 }
+
+// Pyramid pattern
+
+let rows2 = 5;
+for (let i = 1; i <= rows; i++) {
+  let spaces = " ".repeat(rows - i);
+  let stars = "* ".repeat(i);
+  console.log(spaces + stars);
+}
+
+// Right-angled triangle pattern
+let rows3 = 5;
+for (let i = 1; i <= rows; i++) {
+  let line = "";
+  for (let j = 1; j <= i; j++) {
+    line += "* ";
+  }
+  console.log(line);
+}
