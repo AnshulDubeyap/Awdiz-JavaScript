@@ -35,3 +35,22 @@ for (key in obj1) {
 if (flag == true) {
   console.log("Object are simillar");
 }
+let a = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+let b = [];
+
+for (let i = 0; i < a.length; i++) {
+  for (let j = 0; j < a.length; j++) {
+    if (i == j) {
+      b.push(a[i][j]);
+    }
+    if (i + j == a.length - 1) {
+      b.push(a[i][j]);
+    }
+  }
+}
+
+console.log(b);
