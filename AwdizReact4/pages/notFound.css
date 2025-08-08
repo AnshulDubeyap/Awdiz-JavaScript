@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.NotFound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid white;
+}
+
+.NotFound-heading {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #d9534f;
+}
+
+.NotFound-subheading {
+  font-size: 1.5rem;
+  color: #555;
+}
