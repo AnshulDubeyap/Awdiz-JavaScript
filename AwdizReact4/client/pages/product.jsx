@@ -1,44 +1,44 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./product.css";
 
-function Products() {
-  const [products, setProducts] = useState([]);
+const Product = () => {
+  const { productId } = useParams(); // get product id from URL
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProduct = async () => {
       try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        console.log("data", response.data);
-        setProducts(response.data);
+        const response = await axios.get(
+          `https://fakestoreapi.com/products/${productId}`
+        );
+        setProduct(response.data);
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Error fetching product:", error);
       }
     };
 
-    fetchProducts();
-  }, []);
+    fetchProduct();
+  }, [productId]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="product-container">
-      <h1 className="product-title">All Products</h1>
-      <div className="product-section">
-        {products.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img
-              src={product.image}
-              alt={product.title}
-              className="product-image"
-            />
-            <div className="product-description">
-              <p className="product-name">{product.title}</p>
-              <p className="product-price">${product.price.toFixed(2)}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div style={{ padding: "20px" }}>
+      <h2>{product.title}</h2>
+      <img
+        src={product.image}
+        alt={product.title}
+        style={{ width: "200px", height: "200px", objectFit: "contain" }}
+      />
+      <p>{product.description}</p>
+      <p>
+        <strong>Price:</strong> ${product.price}
+      </p>
     </div>
   );
-}
+};
 
-export default Products;
+export default Product;
